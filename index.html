@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular.js</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="MyProject">
+        <h3>Angular.js is cool</h3>
+        <div ng-controller="Calculator">
+            <p>{{text}}</p>
+            <input type="number" ng-model="height">
+            <input type="number" ng-model="weight">
+            <p>Your height is {{height}}cm</p>
+            <p>Your weight is {{weight}}kg</p>
+            <div ng-if="weight>0 && height>0">
+                <h3 ng-if="height-weight>100">
+                    you need to get +{{height-weight-100}} kilograms
+                </h3>
+                <h3 ng-if="height-weight<100">
+                    you need to loss {{100-(height-weight)}} kilograms
+                </h3>
+                <h3 ng-if="height-weight==100">
+                    you’ve got a perfect weight!!
+                </h3>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js">
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
